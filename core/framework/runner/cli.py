@@ -4,6 +4,8 @@ import argparse
 import asyncio
 import json
 import sys
+import re
+import shutil
 from pathlib import Path
 
 
@@ -1088,8 +1090,7 @@ def _interactive_multi(agents_dir: Path) -> int:
 def cmd_create(args: argparse.Namespace) -> int:
     # <--- NOTE: This line starts with 4 SPACES
     """Create a new agent scaffold."""
-    import re
-    import shutil
+
     
     # 1. Setup paths and Validate Name (Security Fix)
     base_dir = Path("exports")
