@@ -1153,13 +1153,14 @@ def cmd_create(args: argparse.Namespace) -> int:
         with open(json_path, "w") as f:
             json.dump(default_config, f, indent=2)
 
-        # 6. Better Success Message (UX Fix)
+        # 6. Success Message (Updated for Copilot Feedback)
         print(f"Created configuration: {json_path}")
         print()
-        print("✅ Agent created successfully!")
-        print("You can now:")
-        print(f"  - Run it: hive run {agent_dir}")
-        print(f"  - Validate it: hive validate {agent_dir}")
+        print("✅ Agent scaffold created successfully!")
+        print("Next steps:")
+        print(f"  1. Open {json_path} and add your nodes.")
+        print(f"  2. Set the 'entry_node' in the graph.")
+        print(f"  3. Validate it: hive validate {agent_dir}")
         return 0
 
     except Exception as e:
